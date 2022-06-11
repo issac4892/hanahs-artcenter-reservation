@@ -1,0 +1,140 @@
+body,
+h1,
+p,
+button {
+    margin: 0;
+    font-family: 'SUIT', sans-serif;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 40px;
+        width: fit-content;
+        text-align: center;
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(33, 32px);
+            grid-template-rows: repeat(21, 32px);
+        }
+    }
+
+    .seat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        border: 1px solid white;
+        color: white;
+
+        &.taken {
+            border: 1px solid #0c8176;
+            background-color: #0c8176;
+            cursor: grab;
+        }
+
+        &.empty {
+            border: 1px solid #0c8176;
+            color: #0c8176;
+            cursor: grab;
+            transition: 0.4s;
+
+            &:hover {
+                background-color: #0c8176;
+                color: white;
+            }
+        }
+    }
+
+    .options {
+        margin-left: 50px;
+
+        div {
+            cursor: grab;
+            background-color: rgb(170, 170, 170);
+            height: 48px;
+            padding: 10px;
+            border-radius: 20px;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: rgb(190, 190, 190);
+            }
+        }
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        cursor: grab;
+    }
+
+    form {
+        background-color: #0c8176;
+        color: white;
+        padding: 20px;
+        border-radius: 40px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        h1 {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        input {
+            min-width: 0;
+            min-height: 0;
+
+            border: 0;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 5px 0;
+            font-family: 'SUIT', sans-serif;
+
+            &:focus,
+            textarea:focus,
+            select:focus {
+                outline: none;
+                border: 0;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            border: 3px solid white;
+            color: white;
+            cursor: grab;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: large;
+        }
+    }
+}

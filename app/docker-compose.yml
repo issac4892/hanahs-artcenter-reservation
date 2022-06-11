@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: QYFJAuaN>&6T
+      POSTGRES_DB: postgres
+
+  # traefik:
+  #   image: traefik:v2.7
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #     - "8080:8080"
+  #   restart: always
+  #   labels:
+  #     - traefik.enable=true
+  #     - traefik.http.services.traefik-dashboard.loadbalancer.server.port=8080
+  #     - traefik.http.routers.traefik-dashboard-http.entrypoints=http
+  #     # 자신의 Subdomain으로 변경필요
+  #     - traefik.http.routers.traefik-dashboard-http.rule=Host('api.hanastudent.page')
+  #     - traefik.docker.network=traefik-public
+  #     - traefik.http.routers.traefik-dashboard-https.entrypoints=https
+  #     # 자신의 Subdomain으로 변경필요
+  #     - traefik.http.routers.traefik-dashboard-https.rule=Host(`api.hanastudent.page`)
+  #     - traefik.http.routers.traefik-dashboard-https.tls=true
+  #     - traefik.http.routers.traefik-dashboard-https.tls.certresolver=le
+  #     - traefik.http.routers.traefik-dashboard-https.service=api@internal
+  #     - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+  #     - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+  #     - traefik.http.routers.traefik-dashboard-http.middlewares=https-redirect
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - ./traefik-public-certificates:/certificates
+  #   command:
+  #     - --providers.docker
+  #     - --providers.docker.exposedbydefault=false
+  #     - --entrypoints.http.address=:80
+  #     - --entrypoints.https.address=:443
+  #     # 자신의 이메일로 변경
+  #     - --certificatesresolvers.le.acme.email=kznm.develop@gmail.com
+  #     - --certificatesresolvers.le.acme.storage=/certificates/acme.json
+  #     - --certificatesresolvers.le.acme.tlschallenge=true
+  #     - --accesslog
+  #     - --log
+  #     - --api

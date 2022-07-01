@@ -7,8 +7,6 @@ import json
 origins = ["*"]
 
 # origins = [
-#     "http://localhost.tiangolo.com",
-#     "https://localhost.tiangolo.com",
 #     "http://localhost",
 #     "http://localhost:8080",
 # ]
@@ -25,7 +23,7 @@ app.add_middleware(
 
 
 def transaction(sql: str):
-    database = psycopg2.connect(host='141.164.56.240',
+    database = psycopg2.connect(host='localhost',
                                 dbname='postgres',
                                 user='postgres',
                                 password='QYFJAuaN>&6T',
@@ -37,7 +35,7 @@ def transaction(sql: str):
     ret = cursor.fetchall()
 
 
-database = psycopg2.connect(host='141.164.56.240',
+database = psycopg2.connect(host='localhost',
                             dbname='postgres',
                             user='postgres',
                             password='QYFJAuaN>&6T',

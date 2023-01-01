@@ -18,7 +18,7 @@ export default function App() {
     const loadData = async () => {
         let tmp = new Array(21).fill(0).map(v => new Array(33).fill(null));
 
-        let resp = await axios.get("http://141.164.56.240:8000/v1/reservation");
+        let resp = await axios.get("https://ticket.algorix.io/v1/reservation");
         let { reserved } = resp.data;
 
         for (let res of reserved) {
@@ -71,7 +71,7 @@ export default function App() {
             if (study_floor.length === 0) return alert("면학실 층수를 입력해주세요.");
             if (study_seat.length === 0) return alert("면학실 좌석 번호를 입력해주세요.");
 
-            axios.post("http://141.164.56.240:8000/v1/reservation", {}, {
+            axios.post("https://ticket.algorix.io/v1/reservation", {}, {
                 params: {
                     name, pin, student_id, neis_id,
                     study_floor: Number(study_floor),
@@ -88,7 +88,7 @@ export default function App() {
 
             if (pin.length === 0) return alert("PIN을 입력해주세요.");
 
-            axios.delete("http://141.164.56.240:8000/v1/reservation", { params: { pin, artcenter_seat: xr * 33 + xc + 1 } })
+            axios.delete("https://ticket.algorix.io/v1/reservation", { params: { pin, artcenter_seat: xr * 33 + xc + 1 } })
                 .then((resp) => { alert(resp.data.message); completed(e); })
                 .catch((err) => alert(err.response.data.message))
                 .finally(loadData);

@@ -1,0 +1,21 @@
+* {
+  font-family: 'SUIT', sans-serif;
+}
+
+.blackb {
+  padding: 10px 15px;
+  font-size: larger;
+  font-weight: bold;
+  border-color: black;
+  background-color: white;
+  color: black;
+  border-width: 2.5px;
+  /* fill black on hover */
+  /* fill color slowly */
+  transition: 0.3s;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+  /* unfill color slowly */
+}

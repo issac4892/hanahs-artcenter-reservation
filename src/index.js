@@ -10,6 +10,9 @@ import ErrorPage from "./routes/error-page";
 import SuccessPage from "./routes/success";
 import FailPage from "./routes/fail";
 import LandingPage from "./routes/landing";
+import SeatPage from "./routes/seats"
+import CancelPage from "./routes/cancel";
+import FinalPage from "./routes/final";
 
 const router = createBrowserRouter([
     {
@@ -23,11 +26,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/seats",
-        element: <App />,
+        element: <SeatPage />,
     },
     {
-        path: "/stats/:seatId",
-        element: <App />,
+        path: "/seats/:seatId",
+        element: <FinalPage />,
     },
     {
         path: "/success",
@@ -36,8 +39,11 @@ const router = createBrowserRouter([
     {
         path: "/fail",
         element: <FailPage />,
+    },
+    {
+        path: "/cancel",
+        element: <CancelPage />
     }
-
 ]);
 
 const rootElement = document.getElementById("root");

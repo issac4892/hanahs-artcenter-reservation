@@ -1,6 +1,7 @@
 import { useRouteError } from "react-router-dom";
 import {useEffect} from "react";
 import './styles/main.scss'
+import './styles/error.scss'
 
 export default function ErrorPage() {
     const error = useRouteError();
@@ -9,7 +10,7 @@ export default function ErrorPage() {
     }, [])
 
     return (
-        <div id="error-page">
+        <div className="container">
             <h1>오류가 발생했습니다.</h1>
             <br />
             <p>

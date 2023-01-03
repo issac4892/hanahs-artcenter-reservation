@@ -12,7 +12,7 @@ import FailPage from "./routes/fail";
 import LandingPage from "./routes/landing";
 import SeatPage from "./routes/seats"
 import CancelPage from "./routes/cancel";
-import FinalPage from "./routes/final";
+import ConfirmPage from "./routes/confirm";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/confirm/:seatId",
-        element: <FinalPage />,
+        element: <ConfirmPage />,
     },
     {
         path: "/success",

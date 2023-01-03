@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
 } from "react-router-dom";
 
@@ -14,7 +14,7 @@ import SeatPage from "./routes/seats"
 import CancelPage from "./routes/cancel";
 import ConfirmPage from "./routes/confirm";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <App />,

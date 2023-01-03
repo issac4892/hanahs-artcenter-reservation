@@ -63,7 +63,6 @@ export default function ConfirmPage() {
                 }}></form>
             </div> : <div className="container2">
                 <h1>해당 좌석을 예매할 수 없습니다. ({numbertoseat(seatId)})</h1>
-                <hr style={{border: "white", margin: "2.5px"}}/>
                 {
                     ishall ? <p>선택하신 좌석은 통로입니다.</p> : <p>선택하신 좌석은 {user} 학생이 이미 예매하였습니다.</p>
                 }

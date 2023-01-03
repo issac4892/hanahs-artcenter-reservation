@@ -8,8 +8,7 @@ export default function LandingPage() {
     return (
         <div className='container'>
             <div className="titlearea">
-                <h1>하나아트센터</h1>
-                <h1>좌석 예매</h1>
+                <h1>하나아트센터<br/>좌석 예매</h1>
             </div>
             <br/>
             <br/>

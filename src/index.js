@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         element: <SeatPage />,
     },
     {
-        path: "/seats/:seatId",
+        path: "/confirm/:seatId",
         element: <FinalPage />,
     },
     {

@@ -20,7 +20,7 @@ const router = createHashRouter([
         element: <App />,
         errorElement: <ErrorPage />,
     },
-        {
+    {
         path: "/landing",
         element: <LandingPage />,
     },

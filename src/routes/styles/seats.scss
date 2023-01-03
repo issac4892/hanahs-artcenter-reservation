@@ -1,7 +1,8 @@
-.titlearea {
-  text-align: left;
-}
-.container {
+
+// scroller on overflow
+.container6 {
+
+  overflow: scroll;
   height: auto;
   padding: 50px;
   border: 5px black solid;
@@ -9,6 +10,6 @@
   margin-right: 25%;
   margin-top: 5%
 }
-.buttonarea {
-  text-align: right;
+.seatarea {
+  max-height: 300px;
 }

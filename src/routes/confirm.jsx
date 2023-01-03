@@ -8,7 +8,7 @@ const lines = "ABCDEFGHIJKLMNOPQRSTU".split("")
 
 export default function ConfirmPage() {
     const navigate = useNavigate()
-    const [able, setable] = useState(true) // 0: able 1: 통로 2: unable
+    const [able, setable] = useState(true)
     const [ishall, setishall] = useState(false)
     const { seatId } = useParams()
     const numbertoseat = (num) => {
@@ -18,17 +18,14 @@ export default function ConfirmPage() {
     }
     const submit = async (e) => {
         e.preventDefault()
-        let name = e.target.name.value
-        let phone = e.target.phone.value
-        let email = e.target.email.value
         let data = {
             name: e.target.name.value,
-            pin: pin.value,
-            student_id: stu_id.value,
-            neis_id: neis_id.value,
-            study_floor: study_floor.value,
-            study_seat: study_seat,
-            artcenter_seat: seatId
+            pin: e.target.pin.value,
+            student_id: e.target.student_id.value,
+            neis_id: e.target.neis_id.value,
+            study_floor: e.target.study_floor.value,
+            study_seat: e.target.study_seat.value,
+            artcenter_seat: e.target.artcenter_seat.value
         }
         let resp = await axios.post("https://ticket.algorix.io/v1/reservation", {}, {
             params: data

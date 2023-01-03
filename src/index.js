@@ -5,7 +5,6 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-import App from "./App";
 import ErrorPage from "./routes/error-page";
 import SuccessPage from "./routes/success";
 import FailPage from "./routes/fail";
@@ -17,12 +16,8 @@ import ConfirmPage from "./routes/confirm";
 const router = createHashRouter([
     {
         path: "/",
-        element: <App />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/landing",
         element: <LandingPage />,
+        errorElement: <ErrorPage />,
     },
     {
         path: "/seats",

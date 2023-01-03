@@ -18,32 +18,34 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
-        errorElement: <ErrorPage />
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "landing",
+                element: <LandingPage />,
+            },
+            {
+                path: "seats",
+                element: <SeatPage />,
+            },
+            {
+                path: "confirm/:seatId",
+                element: <ConfirmPage />,
+            },
+            {
+                path: "success",
+                element: <SuccessPage />,
+            },
+            {
+                path: "fail",
+                element: <FailPage />,
+            },
+            {
+                path: "/ancel",
+                element: <CancelPage />
+            }
+        ]
     },
-    {
-        path: "/landing",
-        element: <LandingPage />,
-    },
-    {
-        path: "/seats",
-        element: <SeatPage />,
-    },
-    {
-        path: "/confirm/:seatId",
-        element: <ConfirmPage />,
-    },
-    {
-        path: "/success",
-        element: <SuccessPage />,
-    },
-    {
-        path: "/fail",
-        element: <FailPage />,
-    },
-    {
-        path: "/cancel",
-        element: <CancelPage />
-    }
 ]);
 
 const rootElement = document.getElementById("root");
